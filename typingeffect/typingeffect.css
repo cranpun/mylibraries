@@ -1,0 +1,91 @@
+@mixin center {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+$font-size: 32px;
+$font-width: 14; //*Not same for other fonts and font-sizes
+$letter-count: 200; //Number of letters in h2
+$transition-time: 10s;
+$bg-color: #eff5ed;
+$mask-color: #eff5ed; //Change it to see how this works :)
+$font-color: #152860;
+$cursor-width: 1px; //Change this to 14px (letter width) if you want Insert:active effect
+
+*, *:after, *:before {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: $bg-color;
+	font-family: courier, serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+.type {
+    @include center;
+    top: 25%;
+    font-weight: 100;
+    font-size: $font-size;
+    color: $font-color;
+    text-align: center;
+    white-space: nowrap;
+	overflow: hidden;
+
+    &:after {
+		display: block;
+		position: absolute;
+		content: '';
+		width: 100%;
+		height: $font-size + 1;
+		left: 0;
+		top: 0;
+		background: $mask-color;
+		animation: .6s blink $font-width, move $transition-time 1.5s forwards steps(1);
+		border-left: $cursor-width solid $mask-color;
+
+		@keyframes move {
+			@for $i from 1 through $letter-count {
+				$temp: 100/$letter-count;
+				$percent: $i*$temp;
+				#{$percent}% {
+					width: calc(100% - (#{$font-width}px*#{$i}));
+					left: calc(#{$font-width}px*#{$i});
+				}
+			}
+		}
+
+		@keyframes blink {
+			0% {
+		  		border-left-color: $font-color;
+			}
+			50% {
+		  		border-left-color: $font-color;
+			}
+			51% {
+		  		border-left-color: $mask-color;
+			}
+			100% {
+		  		border-left-color: $mask-color;
+			}
+		}
+  	}
+
+
+	//This is necessary to hide bottom part of letter 'p'
+    &:before {
+		display: block;
+		position: absolute;
+		content: '';
+		width: 100%;
+		height: 5px; //Change accordingly if needed. 
+		left: 0;
+		top: $font-size;
+		background: $mask-color;
+		animation: move $transition-time 1.5s forwards steps(1);
+	}
+}
