@@ -26,7 +26,7 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-.type {
+.typingeffect {
     @include center;
     top: 25%;
     font-weight: 100;
