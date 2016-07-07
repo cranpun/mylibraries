@@ -1,91 +1,655 @@
-@mixin center {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-}
-
-$font-size: 32px;
-$font-width: 14; //*Not same for other fonts and font-sizes
-$letter-count: 200; //Number of letters in h2
-$transition-time: 10s;
-$bg-color: #eff5ed;
-$mask-color: #eff5ed; //Change it to see how this works :)
-$font-color: #152860;
-$cursor-width: 1px; //Change this to 14px (letter width) if you want Insert:active effect
-
 *, *:after, *:before {
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
-}
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
 
 body {
-	background: $bg-color;
-	font-family: courier, serif;
-    -webkit-font-smoothing: antialiased;
-}
+  background: #eff5ed;
+  font-family: courier, serif;
+  -webkit-font-smoothing: antialiased; }
 
 .typingeffect {
-    @include center;
-    top: 25%;
-    font-weight: 100;
-    font-size: $font-size;
-    color: $font-color;
-    text-align: center;
-    white-space: nowrap;
-	overflow: hidden;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  top: 25%;
+  font-weight: 100;
+  font-size: 32px;
+  color: #152860;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden; }
+  .typingeffect:after {
+    display: block;
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 33px;
+    left: 0;
+    top: 0;
+    background: #eff5ed;
+    animation: 0.6s blink 14, move 10s 1.5s forwards steps(1);
+    border-left: 1px solid #eff5ed; }
 
-    &:after {
-		display: block;
-		position: absolute;
-		content: '';
-		width: 100%;
-		height: $font-size + 1;
-		left: 0;
-		top: 0;
-		background: $mask-color;
-		animation: .6s blink $font-width, move $transition-time 1.5s forwards steps(1);
-		border-left: $cursor-width solid $mask-color;
+@keyframes move {
+  0.5% {
+    width: calc(100% - (14px*1));
+    left: calc(14px*1); }
+  1% {
+    width: calc(100% - (14px*2));
+    left: calc(14px*2); }
+  1.5% {
+    width: calc(100% - (14px*3));
+    left: calc(14px*3); }
+  2% {
+    width: calc(100% - (14px*4));
+    left: calc(14px*4); }
+  2.5% {
+    width: calc(100% - (14px*5));
+    left: calc(14px*5); }
+  3% {
+    width: calc(100% - (14px*6));
+    left: calc(14px*6); }
+  3.5% {
+    width: calc(100% - (14px*7));
+    left: calc(14px*7); }
+  4% {
+    width: calc(100% - (14px*8));
+    left: calc(14px*8); }
+  4.5% {
+    width: calc(100% - (14px*9));
+    left: calc(14px*9); }
+  5% {
+    width: calc(100% - (14px*10));
+    left: calc(14px*10); }
+  5.5% {
+    width: calc(100% - (14px*11));
+    left: calc(14px*11); }
+  6% {
+    width: calc(100% - (14px*12));
+    left: calc(14px*12); }
+  6.5% {
+    width: calc(100% - (14px*13));
+    left: calc(14px*13); }
+  7% {
+    width: calc(100% - (14px*14));
+    left: calc(14px*14); }
+  7.5% {
+    width: calc(100% - (14px*15));
+    left: calc(14px*15); }
+  8% {
+    width: calc(100% - (14px*16));
+    left: calc(14px*16); }
+  8.5% {
+    width: calc(100% - (14px*17));
+    left: calc(14px*17); }
+  9% {
+    width: calc(100% - (14px*18));
+    left: calc(14px*18); }
+  9.5% {
+    width: calc(100% - (14px*19));
+    left: calc(14px*19); }
+  10% {
+    width: calc(100% - (14px*20));
+    left: calc(14px*20); }
+  10.5% {
+    width: calc(100% - (14px*21));
+    left: calc(14px*21); }
+  11% {
+    width: calc(100% - (14px*22));
+    left: calc(14px*22); }
+  11.5% {
+    width: calc(100% - (14px*23));
+    left: calc(14px*23); }
+  12% {
+    width: calc(100% - (14px*24));
+    left: calc(14px*24); }
+  12.5% {
+    width: calc(100% - (14px*25));
+    left: calc(14px*25); }
+  13% {
+    width: calc(100% - (14px*26));
+    left: calc(14px*26); }
+  13.5% {
+    width: calc(100% - (14px*27));
+    left: calc(14px*27); }
+  14% {
+    width: calc(100% - (14px*28));
+    left: calc(14px*28); }
+  14.5% {
+    width: calc(100% - (14px*29));
+    left: calc(14px*29); }
+  15% {
+    width: calc(100% - (14px*30));
+    left: calc(14px*30); }
+  15.5% {
+    width: calc(100% - (14px*31));
+    left: calc(14px*31); }
+  16% {
+    width: calc(100% - (14px*32));
+    left: calc(14px*32); }
+  16.5% {
+    width: calc(100% - (14px*33));
+    left: calc(14px*33); }
+  17% {
+    width: calc(100% - (14px*34));
+    left: calc(14px*34); }
+  17.5% {
+    width: calc(100% - (14px*35));
+    left: calc(14px*35); }
+  18% {
+    width: calc(100% - (14px*36));
+    left: calc(14px*36); }
+  18.5% {
+    width: calc(100% - (14px*37));
+    left: calc(14px*37); }
+  19% {
+    width: calc(100% - (14px*38));
+    left: calc(14px*38); }
+  19.5% {
+    width: calc(100% - (14px*39));
+    left: calc(14px*39); }
+  20% {
+    width: calc(100% - (14px*40));
+    left: calc(14px*40); }
+  20.5% {
+    width: calc(100% - (14px*41));
+    left: calc(14px*41); }
+  21% {
+    width: calc(100% - (14px*42));
+    left: calc(14px*42); }
+  21.5% {
+    width: calc(100% - (14px*43));
+    left: calc(14px*43); }
+  22% {
+    width: calc(100% - (14px*44));
+    left: calc(14px*44); }
+  22.5% {
+    width: calc(100% - (14px*45));
+    left: calc(14px*45); }
+  23% {
+    width: calc(100% - (14px*46));
+    left: calc(14px*46); }
+  23.5% {
+    width: calc(100% - (14px*47));
+    left: calc(14px*47); }
+  24% {
+    width: calc(100% - (14px*48));
+    left: calc(14px*48); }
+  24.5% {
+    width: calc(100% - (14px*49));
+    left: calc(14px*49); }
+  25% {
+    width: calc(100% - (14px*50));
+    left: calc(14px*50); }
+  25.5% {
+    width: calc(100% - (14px*51));
+    left: calc(14px*51); }
+  26% {
+    width: calc(100% - (14px*52));
+    left: calc(14px*52); }
+  26.5% {
+    width: calc(100% - (14px*53));
+    left: calc(14px*53); }
+  27% {
+    width: calc(100% - (14px*54));
+    left: calc(14px*54); }
+  27.5% {
+    width: calc(100% - (14px*55));
+    left: calc(14px*55); }
+  28% {
+    width: calc(100% - (14px*56));
+    left: calc(14px*56); }
+  28.5% {
+    width: calc(100% - (14px*57));
+    left: calc(14px*57); }
+  29% {
+    width: calc(100% - (14px*58));
+    left: calc(14px*58); }
+  29.5% {
+    width: calc(100% - (14px*59));
+    left: calc(14px*59); }
+  30% {
+    width: calc(100% - (14px*60));
+    left: calc(14px*60); }
+  30.5% {
+    width: calc(100% - (14px*61));
+    left: calc(14px*61); }
+  31% {
+    width: calc(100% - (14px*62));
+    left: calc(14px*62); }
+  31.5% {
+    width: calc(100% - (14px*63));
+    left: calc(14px*63); }
+  32% {
+    width: calc(100% - (14px*64));
+    left: calc(14px*64); }
+  32.5% {
+    width: calc(100% - (14px*65));
+    left: calc(14px*65); }
+  33% {
+    width: calc(100% - (14px*66));
+    left: calc(14px*66); }
+  33.5% {
+    width: calc(100% - (14px*67));
+    left: calc(14px*67); }
+  34% {
+    width: calc(100% - (14px*68));
+    left: calc(14px*68); }
+  34.5% {
+    width: calc(100% - (14px*69));
+    left: calc(14px*69); }
+  35% {
+    width: calc(100% - (14px*70));
+    left: calc(14px*70); }
+  35.5% {
+    width: calc(100% - (14px*71));
+    left: calc(14px*71); }
+  36% {
+    width: calc(100% - (14px*72));
+    left: calc(14px*72); }
+  36.5% {
+    width: calc(100% - (14px*73));
+    left: calc(14px*73); }
+  37% {
+    width: calc(100% - (14px*74));
+    left: calc(14px*74); }
+  37.5% {
+    width: calc(100% - (14px*75));
+    left: calc(14px*75); }
+  38% {
+    width: calc(100% - (14px*76));
+    left: calc(14px*76); }
+  38.5% {
+    width: calc(100% - (14px*77));
+    left: calc(14px*77); }
+  39% {
+    width: calc(100% - (14px*78));
+    left: calc(14px*78); }
+  39.5% {
+    width: calc(100% - (14px*79));
+    left: calc(14px*79); }
+  40% {
+    width: calc(100% - (14px*80));
+    left: calc(14px*80); }
+  40.5% {
+    width: calc(100% - (14px*81));
+    left: calc(14px*81); }
+  41% {
+    width: calc(100% - (14px*82));
+    left: calc(14px*82); }
+  41.5% {
+    width: calc(100% - (14px*83));
+    left: calc(14px*83); }
+  42% {
+    width: calc(100% - (14px*84));
+    left: calc(14px*84); }
+  42.5% {
+    width: calc(100% - (14px*85));
+    left: calc(14px*85); }
+  43% {
+    width: calc(100% - (14px*86));
+    left: calc(14px*86); }
+  43.5% {
+    width: calc(100% - (14px*87));
+    left: calc(14px*87); }
+  44% {
+    width: calc(100% - (14px*88));
+    left: calc(14px*88); }
+  44.5% {
+    width: calc(100% - (14px*89));
+    left: calc(14px*89); }
+  45% {
+    width: calc(100% - (14px*90));
+    left: calc(14px*90); }
+  45.5% {
+    width: calc(100% - (14px*91));
+    left: calc(14px*91); }
+  46% {
+    width: calc(100% - (14px*92));
+    left: calc(14px*92); }
+  46.5% {
+    width: calc(100% - (14px*93));
+    left: calc(14px*93); }
+  47% {
+    width: calc(100% - (14px*94));
+    left: calc(14px*94); }
+  47.5% {
+    width: calc(100% - (14px*95));
+    left: calc(14px*95); }
+  48% {
+    width: calc(100% - (14px*96));
+    left: calc(14px*96); }
+  48.5% {
+    width: calc(100% - (14px*97));
+    left: calc(14px*97); }
+  49% {
+    width: calc(100% - (14px*98));
+    left: calc(14px*98); }
+  49.5% {
+    width: calc(100% - (14px*99));
+    left: calc(14px*99); }
+  50% {
+    width: calc(100% - (14px*100));
+    left: calc(14px*100); }
+  50.5% {
+    width: calc(100% - (14px*101));
+    left: calc(14px*101); }
+  51% {
+    width: calc(100% - (14px*102));
+    left: calc(14px*102); }
+  51.5% {
+    width: calc(100% - (14px*103));
+    left: calc(14px*103); }
+  52% {
+    width: calc(100% - (14px*104));
+    left: calc(14px*104); }
+  52.5% {
+    width: calc(100% - (14px*105));
+    left: calc(14px*105); }
+  53% {
+    width: calc(100% - (14px*106));
+    left: calc(14px*106); }
+  53.5% {
+    width: calc(100% - (14px*107));
+    left: calc(14px*107); }
+  54% {
+    width: calc(100% - (14px*108));
+    left: calc(14px*108); }
+  54.5% {
+    width: calc(100% - (14px*109));
+    left: calc(14px*109); }
+  55% {
+    width: calc(100% - (14px*110));
+    left: calc(14px*110); }
+  55.5% {
+    width: calc(100% - (14px*111));
+    left: calc(14px*111); }
+  56% {
+    width: calc(100% - (14px*112));
+    left: calc(14px*112); }
+  56.5% {
+    width: calc(100% - (14px*113));
+    left: calc(14px*113); }
+  57% {
+    width: calc(100% - (14px*114));
+    left: calc(14px*114); }
+  57.5% {
+    width: calc(100% - (14px*115));
+    left: calc(14px*115); }
+  58% {
+    width: calc(100% - (14px*116));
+    left: calc(14px*116); }
+  58.5% {
+    width: calc(100% - (14px*117));
+    left: calc(14px*117); }
+  59% {
+    width: calc(100% - (14px*118));
+    left: calc(14px*118); }
+  59.5% {
+    width: calc(100% - (14px*119));
+    left: calc(14px*119); }
+  60% {
+    width: calc(100% - (14px*120));
+    left: calc(14px*120); }
+  60.5% {
+    width: calc(100% - (14px*121));
+    left: calc(14px*121); }
+  61% {
+    width: calc(100% - (14px*122));
+    left: calc(14px*122); }
+  61.5% {
+    width: calc(100% - (14px*123));
+    left: calc(14px*123); }
+  62% {
+    width: calc(100% - (14px*124));
+    left: calc(14px*124); }
+  62.5% {
+    width: calc(100% - (14px*125));
+    left: calc(14px*125); }
+  63% {
+    width: calc(100% - (14px*126));
+    left: calc(14px*126); }
+  63.5% {
+    width: calc(100% - (14px*127));
+    left: calc(14px*127); }
+  64% {
+    width: calc(100% - (14px*128));
+    left: calc(14px*128); }
+  64.5% {
+    width: calc(100% - (14px*129));
+    left: calc(14px*129); }
+  65% {
+    width: calc(100% - (14px*130));
+    left: calc(14px*130); }
+  65.5% {
+    width: calc(100% - (14px*131));
+    left: calc(14px*131); }
+  66% {
+    width: calc(100% - (14px*132));
+    left: calc(14px*132); }
+  66.5% {
+    width: calc(100% - (14px*133));
+    left: calc(14px*133); }
+  67% {
+    width: calc(100% - (14px*134));
+    left: calc(14px*134); }
+  67.5% {
+    width: calc(100% - (14px*135));
+    left: calc(14px*135); }
+  68% {
+    width: calc(100% - (14px*136));
+    left: calc(14px*136); }
+  68.5% {
+    width: calc(100% - (14px*137));
+    left: calc(14px*137); }
+  69% {
+    width: calc(100% - (14px*138));
+    left: calc(14px*138); }
+  69.5% {
+    width: calc(100% - (14px*139));
+    left: calc(14px*139); }
+  70% {
+    width: calc(100% - (14px*140));
+    left: calc(14px*140); }
+  70.5% {
+    width: calc(100% - (14px*141));
+    left: calc(14px*141); }
+  71% {
+    width: calc(100% - (14px*142));
+    left: calc(14px*142); }
+  71.5% {
+    width: calc(100% - (14px*143));
+    left: calc(14px*143); }
+  72% {
+    width: calc(100% - (14px*144));
+    left: calc(14px*144); }
+  72.5% {
+    width: calc(100% - (14px*145));
+    left: calc(14px*145); }
+  73% {
+    width: calc(100% - (14px*146));
+    left: calc(14px*146); }
+  73.5% {
+    width: calc(100% - (14px*147));
+    left: calc(14px*147); }
+  74% {
+    width: calc(100% - (14px*148));
+    left: calc(14px*148); }
+  74.5% {
+    width: calc(100% - (14px*149));
+    left: calc(14px*149); }
+  75% {
+    width: calc(100% - (14px*150));
+    left: calc(14px*150); }
+  75.5% {
+    width: calc(100% - (14px*151));
+    left: calc(14px*151); }
+  76% {
+    width: calc(100% - (14px*152));
+    left: calc(14px*152); }
+  76.5% {
+    width: calc(100% - (14px*153));
+    left: calc(14px*153); }
+  77% {
+    width: calc(100% - (14px*154));
+    left: calc(14px*154); }
+  77.5% {
+    width: calc(100% - (14px*155));
+    left: calc(14px*155); }
+  78% {
+    width: calc(100% - (14px*156));
+    left: calc(14px*156); }
+  78.5% {
+    width: calc(100% - (14px*157));
+    left: calc(14px*157); }
+  79% {
+    width: calc(100% - (14px*158));
+    left: calc(14px*158); }
+  79.5% {
+    width: calc(100% - (14px*159));
+    left: calc(14px*159); }
+  80% {
+    width: calc(100% - (14px*160));
+    left: calc(14px*160); }
+  80.5% {
+    width: calc(100% - (14px*161));
+    left: calc(14px*161); }
+  81% {
+    width: calc(100% - (14px*162));
+    left: calc(14px*162); }
+  81.5% {
+    width: calc(100% - (14px*163));
+    left: calc(14px*163); }
+  82% {
+    width: calc(100% - (14px*164));
+    left: calc(14px*164); }
+  82.5% {
+    width: calc(100% - (14px*165));
+    left: calc(14px*165); }
+  83% {
+    width: calc(100% - (14px*166));
+    left: calc(14px*166); }
+  83.5% {
+    width: calc(100% - (14px*167));
+    left: calc(14px*167); }
+  84% {
+    width: calc(100% - (14px*168));
+    left: calc(14px*168); }
+  84.5% {
+    width: calc(100% - (14px*169));
+    left: calc(14px*169); }
+  85% {
+    width: calc(100% - (14px*170));
+    left: calc(14px*170); }
+  85.5% {
+    width: calc(100% - (14px*171));
+    left: calc(14px*171); }
+  86% {
+    width: calc(100% - (14px*172));
+    left: calc(14px*172); }
+  86.5% {
+    width: calc(100% - (14px*173));
+    left: calc(14px*173); }
+  87% {
+    width: calc(100% - (14px*174));
+    left: calc(14px*174); }
+  87.5% {
+    width: calc(100% - (14px*175));
+    left: calc(14px*175); }
+  88% {
+    width: calc(100% - (14px*176));
+    left: calc(14px*176); }
+  88.5% {
+    width: calc(100% - (14px*177));
+    left: calc(14px*177); }
+  89% {
+    width: calc(100% - (14px*178));
+    left: calc(14px*178); }
+  89.5% {
+    width: calc(100% - (14px*179));
+    left: calc(14px*179); }
+  90% {
+    width: calc(100% - (14px*180));
+    left: calc(14px*180); }
+  90.5% {
+    width: calc(100% - (14px*181));
+    left: calc(14px*181); }
+  91% {
+    width: calc(100% - (14px*182));
+    left: calc(14px*182); }
+  91.5% {
+    width: calc(100% - (14px*183));
+    left: calc(14px*183); }
+  92% {
+    width: calc(100% - (14px*184));
+    left: calc(14px*184); }
+  92.5% {
+    width: calc(100% - (14px*185));
+    left: calc(14px*185); }
+  93% {
+    width: calc(100% - (14px*186));
+    left: calc(14px*186); }
+  93.5% {
+    width: calc(100% - (14px*187));
+    left: calc(14px*187); }
+  94% {
+    width: calc(100% - (14px*188));
+    left: calc(14px*188); }
+  94.5% {
+    width: calc(100% - (14px*189));
+    left: calc(14px*189); }
+  95% {
+    width: calc(100% - (14px*190));
+    left: calc(14px*190); }
+  95.5% {
+    width: calc(100% - (14px*191));
+    left: calc(14px*191); }
+  96% {
+    width: calc(100% - (14px*192));
+    left: calc(14px*192); }
+  96.5% {
+    width: calc(100% - (14px*193));
+    left: calc(14px*193); }
+  97% {
+    width: calc(100% - (14px*194));
+    left: calc(14px*194); }
+  97.5% {
+    width: calc(100% - (14px*195));
+    left: calc(14px*195); }
+  98% {
+    width: calc(100% - (14px*196));
+    left: calc(14px*196); }
+  98.5% {
+    width: calc(100% - (14px*197));
+    left: calc(14px*197); }
+  99% {
+    width: calc(100% - (14px*198));
+    left: calc(14px*198); }
+  99.5% {
+    width: calc(100% - (14px*199));
+    left: calc(14px*199); }
+  100% {
+    width: calc(100% - (14px*200));
+    left: calc(14px*200); } }
 
-		@keyframes move {
-			@for $i from 1 through $letter-count {
-				$temp: 100/$letter-count;
-				$percent: $i*$temp;
-				#{$percent}% {
-					width: calc(100% - (#{$font-width}px*#{$i}));
-					left: calc(#{$font-width}px*#{$i});
-				}
-			}
-		}
-
-		@keyframes blink {
-			0% {
-		  		border-left-color: $font-color;
-			}
-			50% {
-		  		border-left-color: $font-color;
-			}
-			51% {
-		  		border-left-color: $mask-color;
-			}
-			100% {
-		  		border-left-color: $mask-color;
-			}
-		}
-  	}
-
-
-	//This is necessary to hide bottom part of letter 'p'
-    &:before {
-		display: block;
-		position: absolute;
-		content: '';
-		width: 100%;
-		height: 5px; //Change accordingly if needed. 
-		left: 0;
-		top: $font-size;
-		background: $mask-color;
-		animation: move $transition-time 1.5s forwards steps(1);
-	}
-}
+@keyframes blink {
+  0% {
+    border-left-color: #152860; }
+  50% {
+    border-left-color: #152860; }
+  51% {
+    border-left-color: #eff5ed; }
+  100% {
+    border-left-color: #eff5ed; } }
+  .typingeffect:before {
+    display: block;
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 5px;
+    left: 0;
+    top: 32px;
+    background: #eff5ed;
+    animation: move 10s 1.5s forwards steps(1); }
